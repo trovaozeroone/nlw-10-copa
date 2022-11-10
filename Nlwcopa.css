@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --card-color-sub-- : #f7dd43;
+    --card-color-titborder--: #746615;
+    --bg--: url(./assets/bg-yellow.svg);
+}
+
+body.blue{
+    --card-color-sub-- : #310b99;
+    --card-color-titborder--: #2c8ecf;
+    --bg--: url(./assets/bg-blue.svg);
+}
+body.green{
+    --card-color-sub-- : #055c09;
+    --card-color-titborder--: #1f913b;
+    --bg--: url(./assets/bg-green.svg);
+}
+
+ul{
+    list-style: none;
+}
+
+body {
+    background: #121214 var(--bg--) no-repeat center/cover;
+}
+body *{
+    font-family: 'Roboto'
+
+}
+
+#app{
+    width: fit-content;
+    margin: 52px auto;
+    padding-top: 52px;
+}
+
+header{
+    text-align: center;
+    margin-bottom: 63px;
+
+}
+#cards {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.scard{
+    padding: 32px 23px;
+    text-align: center;
+    background: #1d1c19;
+    border-bottom: 5px solid var(--card-color-sub--);
+    border-radius: 6px;
+
+}
+.scard h2{
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 8px 16px;
+    border: 1px solid var(--card-color-titborder--);
+    border-radius: 6px;
+    
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 53px;
+
+    color: #f7dd43;
+}
+.scard h2 span{
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+#cards ul{
+    display: flex;
+    flex-direction: column;
+    gap: 28px
+}
+
+#cards ul li {
+    display: flex;
+    align-items: content;
+    justify-content: space-between;
+}
+
+#cards ul li + li{
+    margin-top: 24px;
+}
+
+#cards ul li strong{
+    font-weight: 900;
+    font-size: 36px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 125%;
+
+    text-align: center;
+
+    color: #e1e1e6;
+}
+
+/* animação dos icones */
+#cards h2:hover,
+#cards ul li strong:hover,
+#cards ul li img:hover{transform: scale(1.1)}
+
+#cards h2,
+#cards ul li strong,
+#cards ul li img {
+    transition: transform 0.5s;
+}
+
+#cards {animation: appear s;}
+
+@keyframes appear {
+    0% {opacity: 0%;}
+    100% {opacity: 1;}
+}
+
+@media(min-width:700px){
+#cards {
+    max-width: 670px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    }
+}
